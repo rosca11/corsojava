@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 
 public class Main {
@@ -52,6 +53,9 @@ public class Main {
 
 		//lezione sulle wrapper class
 		Wrapper_class.main(null);
+
+		//lezione sulle ArrayList
+		Array_list.main(null);
 
 	}
 
@@ -727,6 +731,76 @@ class Wrapper_class{
 		 * impacchetta (autoboxing) la primitiva quando servono i metodi,
 		 * e la spacchetta (unboxing) quando serve la primitiva
 		 */
+	} 
+	
+}
+
+class Array_list{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLE ARRAYLIST
+		 * Le arraylist sono array ridimensionabili, ma accettano solo reference
+		 * 
+		 * Importare java.util.ArrayList
+		 * Creare un ArrayList
+		 * Aggiungere elementi add()
+		 * Ottenere elementi get()
+		 * Modificare elementi set()
+		 * Rimuovere elementi remove(), clear()
+		 * ArrayList 2D
+		 */
+		
+		ArrayList<String> persone = new ArrayList<String>();	//crea un ArrayList di tipo String
+		persone.add("Luca");
+		persone.add("Marco");
+		persone.add("Anna");
+		
+		System.out.println(persone.get(0));
+		for(int i=0; i<persone.size(); i++) {
+			System.out.println(persone.get(i));		//ottiene l'elemento in posizione i
+		}
+		
+		persone.set(2, "Paola");	//modifica (setta) l'elemento in posizione 2
+		for(int i=0; i<persone.size(); i++) {
+			System.out.println(persone.get(i));
+		}
+	
+		persone.remove(0);	//rimuove l'elemento in posizione 0
+		for(int i=0; i<persone.size(); i++) {
+			System.out.println(persone.get(i));
+		}
+		
+		persone.clear();	//svuota l'ArrayList
+		for(int i=0; i<persone.size(); i++) {
+			System.out.println(persone.get(i));
+		}
+		
+		ArrayList<Integer> eta = new ArrayList<Integer>();	//crea un ArrayList utilizzando la wrapper class della primitiva int
+		eta.add(20);
+		eta.add(28);
+		
+		ArrayList<ArrayList<String>> classi = new ArrayList();	//crea un ArrayList 2D, e quindi un ArrayList di tipo ArrayList di tipo String
+		
+		//E' quindi necessario creare ArrayList di tipo String che saranno gli elementi dell'ArrayList 2D
+		
+		ArrayList<String> classe1 = new ArrayList<String>();
+		classe1.add("Luca");
+		classe1.add("Marco");
+		
+		ArrayList<String> classe2 = new ArrayList<String>();
+		classe2.add("Anna");
+		classe2.add("Edoardo");
+		
+		classi.add(classe1);
+		classi.add(classe2);
+		
+		for(int i=0; i<classi.size(); i++) {				//per le ArrayList si usa size() invece di length()
+			System.out.println();
+			for(int j=0; j<classi.get(i).size(); j++) {
+				System.out.print(classi.get(i).get(j) + " ");
+			}
+		}
 	} 
 	
 }
