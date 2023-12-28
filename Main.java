@@ -47,6 +47,9 @@ public class Main {
 		//lezione su array bidimensionali
 		Array_2d.main(null);
 
+		//lezione su metodi stringhe
+		Metodi_stringhe.main(null);
+
 	}
 
 }
@@ -634,6 +637,54 @@ class Array_2d{
 				System.out.print(studente + " ");
 			}
 		}
+	}
+	
+}
+
+class Metodi_stringhe{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU METODI STRINGHE
+		 * equals, equalsIgnoreCase, length, charAt,
+		 * indexOf, isEmpty, toUpperCase, toLowerCase,
+		 * trim, replace
+		 */
+		
+		String nome = "Leonardo";
+		boolean risultato;
+		
+		risultato = nome.equals("Leonardo");	//restituisce true se nome è uguale a "Leonardo", false altrimenti
+		System.out.println(risultato);
+		
+		risultato = nome.equalsIgnoreCase("leoNardo");	//uguale ad equals ma non case sensitive
+		System.out.println(risultato);
+		
+		int result1 = nome.length();	//restituisce il numero di caratteri
+		System.out.println(result1);
+		
+		char result2 = nome.charAt(7);	//restituisce il carattere presente alla posizione 7
+		System.out.println(result2);
+		
+		int result3 = nome.indexOf("a");	//restituisce l'indice della lettera a nella parola
+		System.out.println(result3);
+		
+		risultato = nome.isEmpty();		//restituisce true se nome è una stringa vuota, false altrimenti
+		System.out.println(risultato);
+		
+		String result4;
+		result4 = nome.toUpperCase();	//restituisce la stessa stringa ma in maiuscolo
+		System.out.println(result4);
+		
+		result4 = nome.toLowerCase();	//restituisce la stessa stringa ma in minuscolo
+		System.out.println(result4);
+		
+		nome = "   Leonardo  ";
+		nome = nome.trim();			//restituisce la stessa stringa rimuovendo gli spazi all'inizio e alla fine
+		System.out.println(nome);
+		
+		result4 = nome.replace('o', 'w');	//restituisce la stessa stringa rimpiazzando tutte le occorrenze di o con w
+		System.out.println(result4);
 	}
 	
 }
