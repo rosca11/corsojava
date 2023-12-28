@@ -40,6 +40,9 @@ public class Main {
 
 		//lezione sul ciclo for
 		Ciclo_for.main(null);
+
+		//lezione su array
+		Array.main(null);
 				
 	}
 
@@ -460,6 +463,115 @@ class Ciclo_for{
 		 * del programma:
 		 * - break consente di uscire dal ciclo
 		 * - continue consente di saltare l'iterazione corrente
+		 */
+	}
+
+}
+
+class Array{
+
+	public static void main(String[] args){
+		/*
+		 * LEZIONE SUGLI ARRAY
+		 * Che cosa sono gli array
+		 * Creare un array vuoto
+		 * Associare elementi
+		 * Array.tostring
+		 * lunghezza array
+		 * modificare elementi
+		 * mostrare elementi
+		 * ciclare array con for e foreach
+		 * 
+		 * Gli array sono strutture dati che consentono di memorizzare
+		 * una collezione di elementi dello stesso tipo in una sequenza
+		 * contigua di memoria.
+		 * 
+		 * Gli array in Java si comportano come oggetti, infatti:
+		 * - sono gestiti per riferimento: una variaile array è una reference
+		 * - vengono creati dinamicamente con new
+		 * - vengono distrutti automaticamente dal garbage collector quando
+		 *   non servono piu, ovvero quando non ci sono piu riferimenti a quell'oggetto
+		 * 
+		 * Tuttavia non sono propriamente oggetti poiché non sono istanze di una classe;
+		 * non esiste infatti una classe Array
+		 *
+		 * Il tipo di elemento di un array può essere un tipo di dato primitivo
+		 * o una reference, che quindi punta a un oggetto (istanza di String o un'altra classe).
+		 * 
+		 * E' importante notare che quando dichiariamo un array in questo modo:
+		 * int[] a;
+		 * stiamo semplicemente creando una reference ad un array,
+		 * e non propriamente un array, poiché infatti non è stata
+		 * specificata la dimensione
+		 * 
+		 * Per creare l'array usiamo l'operatore new, specificandone la dimensione:
+		 * a = new int[50];
+		 * 
+		 * In questo modo abbiamo creato un array di 50 interi
+		 * e a è una reference ad esso.
+		 * 
+		 * In java possiamo anche avere array di oggetti, o meglio array di reference ad oggetti.
+		 * Se scriviamo:
+		 * String[] a;
+		 * a = new String[4];
+		 * 
+		 * Abbiamo creato un array di riferimenti a[], infatti creando l'array non ho creato
+		 * automaticamente anche gli oggetti di tipo String: devo farlo esplicitamente
+		 * 
+		 * a[0] = new String();
+		 * a[1] = new String();
+		 * ...
+		 * ...
+		 * OPPURE
+		 * for(int i=0; i<4; i++){
+		 * 	a[i] = new String();
+		 * 
+		 */
+		
+		int[] numeri = new int[3];
+		int[] numeri2 = {10, 20, 30, 40}; 	//estensione sintattica che consente di creare un array
+											//di n elementi e assegnare loro un valore in un'unica istruzione.
+											//L'elenco di valori tra parentesi graffa prende il nome
+											//di inizializzatore e consente in un colpo solo di creare l'array,
+											//definre la dimensione dell'array e attribuire i valori iniziali
+											//dei suoi elementi; è solo una scorciatoia, infatti l'effetto
+											//è lo stesso della serie di istruzioni standard
+		numeri[0] = 10;
+		numeri[1] = 20;
+		numeri[2] = 30;
+		
+		System.out.println(numeri.length);	//numero di elementi dell'array
+		
+		System.out.println(numeri[0]);	//primo elemento dell'array
+		numeri[0] = 100;
+		System.out.println(numeri[0]);
+		
+		System.out.println(numeri[numeri.length-1]);	//ultimo elemento dell'array
+		
+		for(int i=0; i<numeri.length; i++) {	//iterare un array stampandone gli elementi
+			System.out.println(numeri[i]);
+		}
+		
+		for(int numero: numeri2) {				//iterare un array con foreach
+			System.out.println(numero);
+		}
+		
+		System.out.println(numeri.toString());
+
+		String[] a = new String[3];		//crea un array di tre reference di tipo String
+		for(int i=0; i<3; i++){
+			a[i] = new String();	//crea un istanza (oggetto) di String e la associa alla reference a[i]		
+		}
+
+		/*
+		 * In questo esempio si è utilizzata la classe String per semplicità:
+		 * E' importante notare che l'uso di "new String()" per creare nuove instanze
+		 * di String non è comune in Java; si preferisce di solito invece la sintassi
+		 * delle stringhe letterali (a[i]="") come convenzione comune, in particolare a causa
+		 * di alcune ottimizzazioni automatiche per le stringhe letterali che Java effettua automaticamente
+		 * per migliorare l'efficienza e risparmiare risorse.
+		 * Utilizzare stringhe letterali quando possibile contribuisce a sfruttare queste ottimizzazioni,
+		 * di conseguenza a meno che non ve ne sia motivo si tende a non utilizzare il "new String()".
 		 */
 	}
 
