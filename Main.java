@@ -1,13 +1,35 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		//lezione su metodi di output
+		metodi_output.main(null);
+		
+		//lezione su variabili
+		variabili.main(null);
+		
+		//lezione sui tipi di dati
+		tipi_di_dati.main(null);
+				
+	}
+
+}
+
+class metodi_output{
+
+	public static void main(String[] args){
 		System.out.print("Ciao");  //manda a schermo
 		System.out.print("Ciao di nuovo\n");  //utilizza \n per newline
 		
 		System.out.println("Ciao");  //manda a schermo nuova riga
 		System.out.println("Ciao di nuovo");  //manda a schermo nuova riga
-	
+	}
+
+}
+
+class variabili{
+
+	public static void main(String[] args){
 		int x;	//dichiarazione
 		x = 45;	//assegnazione
 		
@@ -17,8 +39,13 @@ public class Main {
 		
 		int camelCase;	//usato per le variabili
 		int SNAKE_CASE; //usato per le costanti
-		
-		//TIPI DI DATI
+	}
+
+}
+
+class tipi_di_dati{
+
+	public static void main(String[] args){
 		boolean bool = true;
 		byte b = 127;
 		short s = -32768;
@@ -36,7 +63,6 @@ public class Main {
 		//le reference cominciano con la maiuscola
 		
 		stringa.toLowerCase(); //le reference forniscono anche metodi e attributi per lavorare su quel tipo di dati
-				
 	}
 
 }
