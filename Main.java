@@ -50,6 +50,9 @@ public class Main {
 		//lezione su metodi stringhe
 		Metodi_stringhe.main(null);
 
+		//lezione sulle wrapper class
+		Wrapper_class.main(null);
+
 	}
 
 }
@@ -686,6 +689,45 @@ class Metodi_stringhe{
 		result4 = nome.replace('o', 'w');	//restituisce la stessa stringa rimpiazzando tutte le occorrenze di o con w
 		System.out.println(result4);
 	}
+	
+}
+
+class Wrapper_class{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLE WRAPPER CLASS
+		 * Le wrapper class permettono di utilizzare tipi di dati primitivi come reference
+		 * boolean -> Boolean
+		 * char -> Character
+		 * int -> Integer
+		 * double -> Double
+		 * 
+		 * Una wrapper class è una classe che incapsula un tipo di dato primitivo in un oggetto,
+		 * fornendo la possibilità di usare dei metodi, e per questo motivo è anche generalmente
+		 * piu lenta rispetto a una primitiva (ma spesso è un overhead trascurabile).
+		 */
+		
+		Boolean vero = true;
+		Character carattere = 'a';
+		Integer numero = 5;
+		Double virgola = 5.23;
+		String stringa = "corso";
+		
+		boolean a = true;
+		char b = 'a';
+		int c = 5;
+		double d = 5.23;
+		
+		if(vero == a) {					
+			System.out.println("ciao");		
+		}
+		/*
+		 * I due valori sono effettivamente uguali, infatti Java
+		 * impacchetta (autoboxing) la primitiva quando servono i metodi,
+		 * e la spacchetta (unboxing) quando serve la primitiva
+		 */
+	} 
 	
 }
 
