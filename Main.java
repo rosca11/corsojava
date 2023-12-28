@@ -1,21 +1,27 @@
+import java.util.Scanner;
+
+
 public class Main {
 
 	public static void main(String[] args) {
 
 		//lezione su metodi di output
-		metodi_output.main(null);
+		Metodi_output.main(null);
 		
 		//lezione su variabili
-		variabili.main(null);
+		Variabili.main(null);
 		
 		//lezione sui tipi di dati
-		tipi_di_dati.main(null);
+		Tipi_di_dati.main(null);
+
+		//lezione su input da utente
+		Input_utente.main(null);
 				
 	}
 
 }
 
-class metodi_output{
+class Metodi_output{
 
 	public static void main(String[] args){
 		System.out.print("Ciao");  //manda a schermo
@@ -27,7 +33,7 @@ class metodi_output{
 
 }
 
-class variabili{
+class Variabili{
 
 	public static void main(String[] args){
 		int x;	//dichiarazione
@@ -43,7 +49,7 @@ class variabili{
 
 }
 
-class tipi_di_dati{
+class Tipi_di_dati{
 
 	public static void main(String[] args){
 		boolean bool = true;
@@ -66,3 +72,54 @@ class tipi_di_dati{
 	}
 
 }
+
+class Input_utente{
+	
+	public static void main(String[] args){	
+		/* 
+		 * LEZIONE SU INPUT DA UTENTE
+		 * importare java.util.Scanner
+		 * creare oggetto scanner
+		 * creare domande per utente: nome, cognome, eta, citta
+		 * 
+		 */
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Qual è il tuo nome?");
+		String nome = scanner.nextLine();
+		
+		System.out.println("Qual è il tuo cognome?");
+		String cognome = scanner.nextLine();
+		
+		System.out.println("Qual è la tua età?");
+		int eta = scanner.nextInt();
+		
+		scanner.nextLine(); // spiegazione sotto l'output
+		
+		System.out.println("In che città vivi?");
+		String citta = scanner.nextLine();
+		
+		System.out.println("Ciao " + nome + " " + cognome);
+		System.out.println("Hai " + eta + " anni");
+		System.out.println("Vivi a " + citta);
+		
+		/*
+		 * Si è aggiunto uno scanner.nextLine() dopo lo scanner.nextInt()
+		 * poiché, se questo non ci fosse allora il programma non permetterebbe 
+		 * l'inserimento dell'input successivo:
+		 * 
+		 * ESEMPIO: 
+		 * (1) quando inserisco il nome, inserisco "Marco" e il carattere \n (newline)
+		 * con il tasto invio. Poiché scanner.nextLine() legge l'intera riga,
+		 * inclusi nome e \n, non avrò piu \n nel buffer
+		 * 
+		 * (2) quando inserisco l'età, inserisco "20" e il carattere \n, ma poiché
+		 * scanner.nextInt() consuma solo parzialmente la riga, questo legge il numero
+		 * ma lascia \n nel buffer; in questo modo, il \n rimasto nel buffer verrà letto
+		 * dal prossimo scanner.nextLine() come riga vuota
+		 */
+	}
+	
+}
+
