@@ -31,6 +31,9 @@ public class Main {
 
 		//lezione sulla struttura di controllo if
 		Struttura_if.main(null);
+
+		//lezione sulla struttura di controllo switch
+		Struttura_switch.main(null);
 				
 	}
 
@@ -323,5 +326,44 @@ class Struttura_if{
 		System.out.println(x);
 	}
 	
+}
+
+class Struttura_switch{
+
+	public static void main(String[] args){
+		/*
+		 * LEZIONE SULLA STRUTTURA SWITCH
+		 * Lo switch è una struttura di controllo di flusso che consente di eseguire
+		 * diverse istruzioni a seconda del valore di una variabile o di un'espressione.
+		 * Uno switch è spesso utilizzato quando si desidera eseguire un blocco di codice
+		 * diverso in base al valore di una variabile.
+		 */
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Qual è il tuo nome?");
+		String nome = scanner.nextLine();
+		
+		switch(nome) {
+		case "Luca":
+			System.out.println("ciao Luca");
+			break;
+		case "Marco":
+			System.out.println("ciao Marco");
+			break;
+		case "Anna":
+			System.out.println("ciao Anna");
+			break;
+		case "Antonio":
+			System.out.println("ciao Antonio");
+			break;
+		case "Edoardo":
+			System.out.println("ciao Edoardo");
+			break;
+		default:
+			System.out.println("ciao!");
+		}
+	}
+
 }
 
