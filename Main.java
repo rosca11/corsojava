@@ -19,6 +19,9 @@ public class Main {
 
 		//lezione su operazioni aritmetiche
 		Operazioni_aritmetiche.main(null);
+
+		//lezione sulla classe Math
+		Classe_math.main(null);
 				
 	}
 
@@ -167,6 +170,26 @@ class Operazioni_aritmetiche{
 		int result = ((x + y) * y + (4-2)) * z; //espressione aritmetica
 	
 		System.out.println(result);	
+	}
+	
+}
+
+class Classe_math{
+	
+	public static void main(String[] args){	
+		/* 
+		 * LEZIONE SULLA CLASSE MATH
+		 * alcuni metodi: abs, min, max, pow, sqrt
+		 * attributi: PI
+		 */
+		
+		System.out.println(Math.abs(-55));	//valore assoluto di 55
+		System.out.println(Math.min(55,21));	//valore minimo tra un insieme di valori
+		System.out.println(Math.max(55,21));	//valore massimo tra un insieme di valori
+		System.out.println(Math.pow(5, 2));	//potenza con base 5 ed esponente 2
+		System.out.println(Math.sqrt(25));	//radice quadrata di 25
+		
+		System.out.println(Math.PI);	//pi greco
 	}
 	
 }
