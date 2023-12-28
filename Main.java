@@ -34,6 +34,9 @@ public class Main {
 
 		//lezione sulla struttura di controllo switch
 		Struttura_switch.main(null);
+
+		//lezione sui cicli While / Do while
+		Ciclo_while.main(null);
 				
 	}
 
@@ -363,6 +366,47 @@ class Struttura_switch{
 		default:
 			System.out.println("ciao!");
 		}
+	}
+
+}
+
+class Ciclo_while{
+
+	public static void main(String[] args){
+		/*
+		 * LEZIONE SUI CICLI WHILE / DO WHILE
+		 * Il while è una struttura di controllo iterativa che consente di eseguire ripetutamente
+		 * un blocco di istruzioni fintanto che una determinata condizione è vera.
+		 * In altre parole, il "while" crea un ciclo che continua ad eseguire il suo blocco di codice
+		 * finché la condizione specificata è valutata come vera.
+		 * 
+		 * Cos'è un ciclo
+		 * A cosa serve un ciclo
+		 * Ciclo while
+		 * Ciclo do while
+		 * 
+		 * Un ciclo è un porzione di codice che ci permette di eseguire ripetutamente
+		 * una o piu istruzioni finché una condizione è verificata.
+		 * E' necessario quando non ci conosce a priori il numero di volte che occorre
+		 * ripetere le istruzioni.
+		 */
+		
+		int i = 0;
+		while (i < 5) {
+			System.out.println(i);
+			i++;
+		}
+		
+		do {
+			System.out.println("do while " + i);
+			i++;
+		} while(i<5);
+		
+		/*
+		 * il do while differisce dal while per il fatto che permette
+		 * di eseguire almeno una volta il blocco di codice anche se la
+		 * condizione non è verificata
+		 */
 	}
 
 }
