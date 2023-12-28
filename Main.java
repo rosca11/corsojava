@@ -16,6 +16,9 @@ public class Main {
 
 		//lezione su input da utente
 		Input_utente.main(null);
+
+		//lezione su operazioni aritmetiche
+		Operazioni_aritmetiche.main(null);
 				
 	}
 
@@ -119,6 +122,51 @@ class Input_utente{
 		 * ma lascia \n nel buffer; in questo modo, il \n rimasto nel buffer verrà letto
 		 * dal prossimo scanner.nextLine() come riga vuota
 		 */
+	}
+	
+}
+
+class Operazioni_aritmetiche{
+	
+	public static void main(String[] args){	
+		/* 
+		 * LEZIONE SU OPERAZIONI ARITMETICHE
+		 * operatori aritmetici + - / * %
+		 * shorthand
+		 * incremento e decremento
+		 * esempi di espressioni
+		 */
+		
+		int x = 11;
+		int y = 5;
+		int z;
+		
+		z = x + y;
+		z = x - y;
+		z = x * y;
+		z = x / y;
+		z = x % y;
+		
+		z = x + y;
+		System.out.println(z);
+		System.out.println(x+y);
+		
+		x = x + 3;	//incrementa se stesso di 3
+		x += 3;		//shorthand dell'addizione a se stesso
+		
+		//ESEMPI DI SHORTHAND
+		x *= 3;
+		x /= 3;
+		
+		x++;	//incrementa di 1 il valore di x
+		x--;	//decrementa di 1 il valore di x
+		
+		x = 11;
+		y = 3;
+		z = 9;
+		int result = ((x + y) * y + (4-2)) * z; //espressione aritmetica
+	
+		System.out.println(result);	
 	}
 	
 }
