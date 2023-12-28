@@ -28,6 +28,9 @@ public class Main {
 
 		//lezione su operatori logici
 		Operatori_logici.main(null);
+
+		//lezione sulla struttura di controllo if
+		Struttura_if.main(null);
 				
 	}
 
@@ -263,6 +266,61 @@ class Operatori_logici{
 		
 		boolean y = ((3 < 10 && 3 % 2 == 0) || (6 < 10 && 6 % 2 == 0)) && 10 < 100;
 		System.out.println(y);
+	}
+	
+}
+
+class Struttura_if{
+	
+	public static void main(String[] args){	
+		/* 
+		 * LEZIONE SULLA STRUTTURA IF
+		 * L'if è una struttura di controllo condizionale
+		 * che permette di eseguire un blocco di codice solo se
+		 * una determinata condizione è vera.
+		 * 
+		 * IF
+		 * ELSE
+		 * ELSE IF
+		 * if annidati
+		 * ternary operator
+		 */
+		
+		boolean isOnline = true;
+		String nome = "Luca";
+		int num = 3;
+		
+		if(3 < 10) {
+			System.out.println("ok");
+		}
+		
+		if(isOnline){
+			System.out.println("è online");
+		}else {
+			System.out.println("non è online");
+		}
+		
+		if(nome == "Luca") {
+			System.out.println("è Luca");
+		}else if(nome == "Marco") {
+			System.out.println("è Marco");
+		}else {
+			System.out.println("è qualcun'altro");
+		}
+		
+		if(num < 10) {
+			System.out.println("è minore di 10");
+			if(num % 2 == 0) {
+				System.out.println("è pari");
+			}else {
+				System.out.println("è dispari");
+			}
+		}else {
+			System.out.println("non è minore di 10");
+		}
+		
+		String x = 3 < 10 ? "buongiorno" : "buonasera";	//if con operatore ternario
+		System.out.println(x);
 	}
 	
 }
