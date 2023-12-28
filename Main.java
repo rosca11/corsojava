@@ -43,7 +43,10 @@ public class Main {
 
 		//lezione su array
 		Array.main(null);
-				
+		
+		//lezione su array bidimensionali
+		Array_2d.main(null);
+
 	}
 
 }
@@ -575,5 +578,63 @@ class Array{
 		 */
 	}
 
+}
+
+class Array_2d{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU ARRAY 2D
+		 * Cosa sono gli array 2D
+		 * Creare un array 2D in entrambi i modi: creazione e poi assegnamento o inizializzazione diretta
+		 * accedere agli elementi degli array
+		 * ciclare con for e foreach
+		 * 
+		 * Gli array 2D sono array di array, anche chiamati array multidimensionali.
+		 * Un array 2D è essenzialmente la rappresentazione di una
+		 * tabella (o matrice) sottoforma di array
+		 */
+		
+		String[][] classi = new String[3][3];	//dichiara e crea un array bidimensionale di dimensione 3*3,
+												//e quindi un array di tre array di stringhe di dimensione 3
+		
+		classi[0][0] = "Luca";
+		classi[0][1] = "Anna";
+		classi[0][2] = "Marco";
+		
+		classi[1][0] = "Edoardo";
+		classi[1][1] = "Leonardo";
+		classi[1][2] = "Antonio";
+		
+		classi[2][0] = "Arianna";
+		classi[2][1] = "Paolo";
+		classi[2][2] = "Andrea";
+		
+		System.out.println(classi[2][1]);
+		classi[2][1] = "Giovanni";
+		System.out.println(classi[2][1]);
+		
+		for(int classe=0; classe<classi.length; classe++) {							//stampa dell'array 2D con for
+			System.out.println();
+			for(int studente=0; studente<classi[classe].length; studente++) {
+				System.out.print(classi[classe][studente] + " ");
+			}
+		}
+		
+		String[][] classi2 = {														//inizializzazione diretta di array 2D
+									{"Luca", "Anna", "Marco"},
+									{"Edoardo", "Leonardo", "Antonio"},
+									{"Arianna", "Paolo", "Andrea"}
+							 };
+		
+		System.out.println();
+		for(String[] classe: classi) {						//stampa dell'array 2D con foreach
+			System.out.println();
+			for(String studente: classe) {
+				System.out.print(studente + " ");
+			}
+		}
+	}
+	
 }
 
