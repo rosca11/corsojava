@@ -22,6 +22,9 @@ public class Main {
 
 		//lezione sulla classe Math
 		Classe_math.main(null);
+
+		//lezione su operatori di comparazione
+		Operatori_comparazione.main(null);
 				
 	}
 
@@ -190,6 +193,46 @@ class Classe_math{
 		System.out.println(Math.sqrt(25));	//radice quadrata di 25
 		
 		System.out.println(Math.PI);	//pi greco
+	}
+	
+}
+
+class Operatori_comparazione{
+	
+	public static void main(String[] args){	
+		/* 
+		 * LEZIONE SUGLI OPERATORI DI COMPARAZIONE
+		 * operatori:
+		 * >
+		 * >=
+		 * <
+		 * <=
+		 * ==
+		 * !=
+		 */
+		
+		boolean risultato = 3 > 10;
+		
+		System.out.println(risultato);	//tue o false
+		System.out.println(3 < 10);		//true o false
+		
+		risultato = 33 > 10;
+		System.out.println(risultato);
+		
+		risultato = 10 >= 10;
+		System.out.println(risultato);
+		
+		risultato = 9 < 10;
+		System.out.println(risultato);
+		
+		risultato = 9 <= 9;
+		System.out.println(risultato);
+		
+		risultato = 10 == 10;
+		System.out.println(risultato);
+		
+		risultato = 11 != 10;
+		System.out.println(risultato);
 	}
 	
 }
