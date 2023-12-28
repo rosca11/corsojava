@@ -25,6 +25,9 @@ public class Main {
 
 		//lezione su operatori di comparazione
 		Operatori_comparazione.main(null);
+
+		//lezione su operatori logici
+		Operatori_logici.main(null);
 				
 	}
 
@@ -233,6 +236,33 @@ class Operatori_comparazione{
 		
 		risultato = 11 != 10;
 		System.out.println(risultato);
+	}
+	
+}
+
+class Operatori_logici{
+	
+	public static void main(String[] args){	
+		/* 
+		 * LEZIONE SUGLI OPERATORI LOGICI
+		 * operatori: AND OR NOT
+		 */
+
+		boolean x;
+		x = 3 > 10;		//true se 3 è maggiore di 10, false altrimenti
+		x = 3 % 2 == 0;	//true se 3 è pari, false altrimenti
+		
+		x = 3 < 10 && 3 % 2 == 0;	//true se entrambe le condizioni sono verificate, false altrimenti
+		System.out.println(x);
+		
+		x = 3 < 10 || 3 % 2 == 0;	//true se almeno una delle due condizioni è verificata, false altrimenti
+		System.out.println(x);
+		
+		x = !(3 < 10);			//negazione del risultato di (3 < 10)
+		System.out.println(x);
+		
+		boolean y = ((3 < 10 && 3 % 2 == 0) || (6 < 10 && 6 % 2 == 0)) && 10 < 100;
+		System.out.println(y);
 	}
 	
 }
