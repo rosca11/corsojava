@@ -37,6 +37,9 @@ public class Main {
 
 		//lezione sui cicli While / Do while
 		Ciclo_while.main(null);
+
+		//lezione sul ciclo for
+		Ciclo_for.main(null);
 				
 	}
 
@@ -406,6 +409,57 @@ class Ciclo_while{
 		 * il do while differisce dal while per il fatto che permette
 		 * di eseguire almeno una volta il blocco di codice anche se la
 		 * condizione non è verificata
+		 */
+	}
+
+}
+
+class Ciclo_for{
+
+	public static void main(String[] args){
+		/*
+		 * LEZIONE SUL CICLO FOR
+		 * Il costrutto for è una struttura di controllo iterativa,
+		 * spesso utilizzata quando si conosce a priori il numero
+		 * di iterazioni che si desidera eseguire
+		 * 
+		 * Ciclo for
+		 * for annidati
+		 * versione enhanced/foreach
+		 * break e continue
+		 */
+		
+		for(int i=0; i<5; i++) {
+			System.out.println(i);
+		}
+		
+		for(int i=0; i<5; i++) {
+			System.out.println("riga " + i);
+			for(int j=0; j<5; j++) {
+				System.out.println("colonna " + j);
+			}
+		}
+		
+		int[] numeri = {10, 20, 30, 40, 50};
+		for(int numero: numeri) {			//versione enhanced del ciclo for, chiamata foreach in altri linguaggi;
+			System.out.println(numero);		//si usa con gli array
+		}
+		
+		for(int i=0; i<5; i++) {
+			if(i == 4) {
+				break;
+			}else if(i == 2) {
+				continue;
+			}
+			System.out.println(i);
+		}
+		
+		/*
+		 * break e continue sono istruzioni di controllo utilizzate
+		 * all'interno di cicli per alterare il flusso di esecuzione
+		 * del programma:
+		 * - break consente di uscire dal ciclo
+		 * - continue consente di saltare l'iterazione corrente
 		 */
 	}
 
