@@ -75,6 +75,9 @@ public class Main {
 		//lezione su array di oggetti
 		Array_oggetti.main(null);
 
+		//lezione sul passaggio di oggetti come parametri
+		Oggetti_parametri.main(null);
+
 	}
 
 }
@@ -1099,6 +1102,34 @@ class Array_oggetti{
 		System.out.println(persone[1].nome);
 		
 		Persona[] persone2 = {persona1, persona2, persona3};
+	}
+	
+}
+
+class Oggetti_parametri{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SUL PASSAGGIO DI OGGETTI COME PARAMETRI
+		 */
+		Persona persona1 = new Persona("Luca", "Rossi");
+		Persona persona2 = new Persona("Marco", "Verdi");
+		
+		persona1.saluta(persona2);
+	}
+	
+	static class Persona{
+		String nome;
+		String cognome;
+		
+		Persona(String nome, String cognome){
+			this.nome = nome;
+			this.cognome = cognome;
+	    }
+		
+		void saluta(Persona persona) {
+			System.out.println("Ciao " + persona.nome + " sono " + this.nome);
+		}
 	}
 	
 }
