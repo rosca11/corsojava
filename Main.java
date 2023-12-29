@@ -69,6 +69,9 @@ public class Main {
 		//lezione su scope variabili
 		Scope_variabili.main(null);
 
+		//lezione su metodo toString()
+		Metodo_toString.main(null);
+
 	}
 
 }
@@ -1025,6 +1028,48 @@ class Overloaded_constructors{
 	}
 	
 }
+
+class Metodo_toString{
+	
+	public static void main(String[] args) {
+		/*
+		 * In Java, tutte le classi ereditano implicitamente dalla classe Object,
+		 * e la classe Object ha un metodo toString() che restituisce una rappresentazione
+		 * in formato stringa dell'oggetto, predefinita come il nome della classe, seguito da @
+		 * e dall'hashcode dell'oggetto.
+		 * 
+		 * Quando si prova a ottenere il valore di una reference Java chiama implicitamente
+		 * il metodo toString(): è pratica comune sovrascrivere il metodo toString() in una classe
+		 * per ottenere una rappresentazione piu significativa e leggibile di un'istanza utilizzando
+		 * la reference che punta ad essa
+		 */
+
+		Persona persona = new Persona("Luca", "Rossi", 25, "blu");
+		System.out.println(persona);
+	}
+	
+	static class Persona{
+		String nome;
+		String cognome;
+		int eta;
+		String colorePreferito;
+		
+		Persona(String nome, String cognome, int eta, String colorePreferito){
+			this.nome = nome;
+			this.cognome = cognome;
+			this.eta = eta;
+			this.colorePreferito = colorePreferito;
+	    }
+		
+		public String toString() {
+			String stringa = this.nome + "\n" + this.cognome + "\n" + this.eta + "\n" + this.colorePreferito;
+			return stringa;
+		}
+	}
+	
+}
+
+
 
 
 
