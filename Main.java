@@ -1010,5 +1010,21 @@ class Scope_variabili{
 	
 }
 
+class Overloaded_constructors{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU OVERLOADED CONSTRUCTORS
+		 * Creare classe Pizza
+		 * Creare multipli costruttori
+		 */
+		
+		Pizza pizza1 = new Pizza("integreale", "pomodoro", "mozzarella", "ananas");
+		Pizza pizz2 = new Pizza("5 cereali");
+		Pizza pizza3 = new Pizza("normale", "pomdoro", "mozzarella");
+	}
+	
+}
+
 
 
