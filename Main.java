@@ -60,6 +60,9 @@ public class Main {
 		//lezione sui metodi
 		Metodi.main(null);
 
+		//lezione su overload di metodi
+		Overloaded_methods.main(null);
+
 	}
 
 }
@@ -841,6 +844,43 @@ class Metodi{
 	
 	static int addizione(int a, int b) {
 		int result = a+b;
+		return result;
+	}
+	
+}
+
+class Overloaded_methods{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU OVERLOADED METHODS
+		 * Cosa sono
+		 * Creiamo diversi metodi con numero di parametri differente
+		 * Creiamo diversi metodi con tipi di dati differenti
+		 * 
+		 * L'overload è in Java la capacità di creare diversi metodi che hanno
+		 * lo stesso nome ma una signature diversa (ovvero i parametri)
+		 */
+		
+		int doppioInt = addizione(2,3);
+		int triploInt = addizione(5, 12, 8);
+		double doppioDouble = addizione(2.5, 7.4);
+		
+		System.out.println(doppioInt);
+		System.out.println(triploInt);
+		System.out.println(doppioDouble);
+	}
+	
+	static int addizione(int a, int b) {
+		int result = a + b;
+		return result;
+	}
+	static double addizione(double a, double b) {
+		double result = a + b;
+		return result;
+	}
+	static int addizione(int a, int b, int c) {
+		int result = a + b;
 		return result;
 	}
 	
