@@ -83,6 +83,9 @@ public class Main {
 
 		//lezione su ereditarietà
 		Ereditarieta.main(null);
+
+		//lezione sulle classi astratte
+		Classi_astratte.main(null);
 		
 	}
 
@@ -1231,6 +1234,31 @@ class Ereditarieta{
 		insegnante1.saluta();
 		insegnante1.insegna();
 		System.out.println(insegnante1.materia);
+	}
+	
+}
+
+class Classi_astratte{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLE CLASSI ASTRATTE
+		 * cosa sono?
+		 * creare classe astratta veicolo
+		 * creare classe figlia macchina
+		 * metodi astratti
+		 * 
+		 * Le classi astratte sono classi che non possono essere utilizzate per creare oggetti,
+		 * create affinché vengano esclusivamente ereditate da altre classi
+		 * 
+		 * Una classe astratta introduce metodi astratti, che sono metodi privi di implementazione (senza corpo).
+		 * Questi metodi devono essere obbligatoriamente implementati, ossia sovrascritti,
+		 * dalle sottoclassi che ereditano dalla classe astratta."
+		 */
+		
+		Macchina macchina = new Macchina();
+		macchina.muovi();
+		macchina.frena();
 	}
 	
 }
