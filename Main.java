@@ -66,6 +66,9 @@ public class Main {
 		//lezione di introduzione OOP
 		Introduzione_OOP.main(null);
 
+		//lezione su scope variabili
+		Scope_variabili.main(null);
+
 	}
 
 }
@@ -953,4 +956,59 @@ class Introduzione_OOP{
 	}
 	
 }
+
+class Scope_variabili{
+	
+	String nome;
+	String cognome;
+	int eta;
+	
+	Scope_variabili(String nome, String cognome, int eta) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.eta = eta;
+	}
+
+	Scope_variabili() {}
+	
+	/*
+		 * LEZIONE SULLO SCOPE DELLE VARIABILI
+		 * Cos'è lo scope di una variabile
+		 * Scope locale
+		 * Scope globale
+		 * 
+		 * Lo scope (ambito di visibilità) di una variabile determina dove la variabile
+		 * può essere utilizzata all'interno di un programma.
+		 * 
+		 * Java definisce diversi livelli di scope per variabili, tra cui:
+		 * 
+		 * Scope di blocco (Block Scope): Le variabili definite all'interno di un blocco di codice sono visibili solo all'interno di quel blocco.
+		 * Scope di metodo (Method Scope): Le variabili definite all'interno di un metodo sono visibili solo all'interno di quel metodo. 
+		 * Scope di classe (Class Scope): Le variabili di istanza (campi di classe) sono visibili in tutta la classe.
+		 * Scope di parametro: I parametri di un metodo sono visibili solo all'interno del corpo del metodo. 
+		 * 
+		 * Dal punto di vista di una classe, le variabili definite fuori dai metodi hanno scope globale,
+		 * e quindi sono accessibili da ogni parte della classe;
+		 * le variabii definite all'interno dei metodi hanno invece scope locale, limitato al metodo stesso.
+	 */		
+	
+	void metodo() {
+		System.out.println(this.nome);		//nome ed eta sono accessibili ovunque
+		int stipendio = this.eta * 100;
+		this.altroMetodo(stipendio);
+	}
+	
+	void altroMetodo(int salario) {
+//		System.out.println(stipendio);		//non posso farlo poiché stipendio ha scope limitato al corpo di metodo
+		System.out.println(salario);
+	}
+
+	public static void main(String[] args) {
+		Scope_variabili persona = new Scope_variabili("Luca", "Rossi", 25);
+		persona.metodo();
+	}
+	
+}
+
+
 
