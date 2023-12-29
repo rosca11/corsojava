@@ -80,6 +80,9 @@ public class Main {
 
 		//lezione sulle keyword final e static
 		Final_static.main(null);
+
+		//lezione su ereditarietà
+		Ereditarieta.main(null);
 		
 	}
 
@@ -1172,6 +1175,62 @@ class Final_static{
 		static void mostraNumPersone() {
 			System.out.println("Il numero di persone è: " + numeroPersone);
 		}
+	}
+	
+}
+
+class Ereditarieta{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULL'EREDITARIETA'
+		 * cos'è l'ereditarietà
+		 * metodi e attributi aggiuntivi
+		 * overriding dei metodi (@Override)
+		 * costruttore classi figlie e super keyword
+		 * 
+		 * L'ereditarietà è un meccanismo che permette a una classe di derivare
+		 * da un'altra classe ed ereditarne metodi e attributi
+		 * 
+		 * Ogni classe figlia avrà a disposizione quindi tutti i metodi e gli attributi
+		 * ereditati piu tutti i suoi attributi e metodi aggiuntivi.
+		 * 
+		 * La keyword super è utilizzata, all'interno del costruttore di una sottoclasse (classe figlia),
+		 * per invocare il costruttore della superclasse (classe padre).
+		 *(in generale, permette di fare riferimento ai membri, attributi o metodi che siano, di una classe genitore:
+		 * super.attributo = valore;	super.metodo();	).
+		 * 
+		 * Una sottoclasse eredita automaticamente tutti i costruttori della superclasse; se nel costruttore della sottoclasse
+		 * non si invoca esplicitamente il costruttore da chiamare, Java invocherà automaticamente il costruttore di default
+		 * (senza argomenti) della superclasse. Se la superclasse ha un costruttore con argomenti e non un costruttore di default
+		 * (in questo caso Java non lo aggiunge automaticamente), allora nella sottoclasse deve essere specificato esplicitamente
+		 * il costruttore da invocare altrimenti si verificherà un errore di compilazione.
+		 * 
+		 * Ovviamente, se nella superclasse vi è un costruttore di default, allora la sottoclasse può anche non definire
+		 * un proprio costruttore poiché Java ne aggiungerà uno automaticamente, che automaticamente invocherà anche
+		 * il costruttore di default della superclasse.
+		 * 
+		 * Attraverso l'override una classe figlia può sovrascrivere un metodo ereditato;
+		 * utilizziamo la notazione @Override (non obbligatoria) per indicare che si sta
+		 * sovrascrivendo un metodo che non è proprio della classe ma ereditato da una classe padre
+		 */
+		
+		System.out.print("Persona: ");
+		Persona persona1 = new Persona("Luca", "Rossi", 25, "blu");
+		persona1.saluta();
+		
+		System.out.print("Studente: ");
+		Studente studente1 = new Studente("Marco", "Verdi", 25, "informatica", "4B");
+		studente1.saluta();
+		System.out.println(studente1.nome);
+		studente1.studia();
+		System.out.println(studente1.materiaPreferita);
+		
+		System.out.print("Insegnante: ");
+		Insegnante insegnante1 = new Insegnante("Edoardo", "Neri", 28, "informatica");
+		insegnante1.saluta();
+		insegnante1.insegna();
+		System.out.println(insegnante1.materia);
 	}
 	
 }
