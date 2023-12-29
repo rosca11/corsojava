@@ -72,6 +72,9 @@ public class Main {
 		//lezione su metodo toString()
 		Metodo_toString.main(null);
 
+		//lezione su array di oggetti
+		Array_oggetti.main(null);
+
 	}
 
 }
@@ -1065,6 +1068,37 @@ class Metodo_toString{
 			String stringa = this.nome + "\n" + this.cognome + "\n" + this.eta + "\n" + this.colorePreferito;
 			return stringa;
 		}
+	}
+	
+}
+
+class Array_oggetti{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU ARRAY DI OGGETTI
+		 * creare array di tipo oggetto vuoto
+		 * creare oggetti
+		 * assegnare oggetti come elementi array
+		 * accedere agli elementi
+		 * inizializzare un array
+		 */
+		
+		int[] numeri = new int[3];	//array di interi
+		
+		Persona[] persone = new Persona[3];
+		
+		Persona persona1 = new Persona("Luca", "Rossi", 25, "blu"); 
+		Persona persona2 = new Persona("Marco", "Verdi", 35, "rosso");
+		Persona persona3 = new Persona("Anna", "Neri", 23, "giallo");
+		
+		persone[0] = persona1;
+		persone[1] = persona2;
+		persone[2] = persona3;
+		
+		System.out.println(persone[1].nome);
+		
+		Persona[] persone2 = {persona1, persona2, persona3};
 	}
 	
 }
