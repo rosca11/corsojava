@@ -57,6 +57,9 @@ public class Main {
 		//lezione sulle ArrayList
 		Array_list.main(null);
 
+		//lezione sui metodi
+		Metodi.main(null);
+
 	}
 
 }
@@ -802,6 +805,44 @@ class Array_list{
 			}
 		}
 	} 
+	
+}
+
+class Metodi{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SUI METODI
+		 * Cosa sono i metodi
+		 * Creiamo un semplice metodo void
+		 * Parametri dei metodi
+		 * il return
+		 * 
+		 * I metodi sono blocchi di codice riutilizzabili
+		 * Di base sono funzioni, ma vengono chiamati metodi poiché sono strettamente
+		 * legati agli oggetti e alle classi nel paradigma orientato agli oggetti, riflettendo
+		 * l'incapsulamento delle operazioni all'interno delle strutture di dati e enfatizzando
+		 * l'interazione tra gli oggetti.
+		 */
+		
+		faiPasta();
+		cucinaPranzo("carne");
+		int tot = addizione(102,3);
+		System.out.println(tot);
+	} 
+
+	static void faiPasta() {
+		System.out.println("Sto cucinando pasta");
+	}
+	
+	static void cucinaPranzo(String cibo) {
+		System.out.println("Sto cucinando " + cibo);
+	}
+	
+	static int addizione(int a, int b) {
+		int result = a+b;
+		return result;
+	}
 	
 }
 
