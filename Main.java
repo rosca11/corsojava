@@ -63,6 +63,9 @@ public class Main {
 		//lezione su overload di metodi
 		Overloaded_methods.main(null);
 
+		//lezione di introduzione OOP
+		Introduzione_OOP.main(null);
+
 	}
 
 }
@@ -882,6 +885,71 @@ class Overloaded_methods{
 	static int addizione(int a, int b, int c) {
 		int result = a + b;
 		return result;
+	}
+	
+}
+
+class Introduzione_OOP{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE DI INTRODUZIONE OOP (Object Oriented Programming)
+		 * Cos'è la programmazione ad oggetti
+		 * classi, metodi e attributi
+		 * classe con file esterno
+		 * cosa sono gli oggetti e le istanze di classe
+		 * usare attributi e metodi
+		 * Cos'è un costruttore
+		 * 
+		 * La programmazione a oggetti è un paradigma di programmazione che si basa sul concetto di oggetto.
+		 * Gli oggetti sono rappresentazioni di entità del mondo reale e contengono dati e metodi che operano
+		 * su questi dati. Questo approccio consente agli sviluppatori di organizzare il codice in modo più modulare,
+		 * riutilizzabile e facile da mantenere.
+		 * Ogni oggetto ha determinate caratteristiche, e ogni cosa del mondo reale è definibile come oggetto
+		 * in un contesto di programmazione.
+		 * 
+		 * OGGETTI: Gli oggetti sono istanze di classi e rappresentano entità con caratteristiche specifiche.
+		 * Ad esempio, una classe "Auto" potrebbe avere oggetti come "Ferrari" o "Toyota".
+		 * 
+		 * CLASSI: Una classe è un modello o un prototipo per creare oggetti.
+		 * Definisce gli attributi (dati) e i metodi (comportamenti) che gli oggetti di quella classe avranno.
+		 * 
+		 * Cos'è un costruttore
+		 * creiamone uno
+		 * parola chiave this
+		 * 
+		 * Un costruttore è un metodo speciale di una classe che viene chiamato automaticamente quando si crea
+		 * un nuovo oggetto di quella classe. Il suo scopo principale è inizializzare gli attributi dell'oggetto
+		 * o eseguire altre operazioni necessarie prima che l'oggetto venga utilizzato.
+		 * 
+		 * I costruttori sono di solito dichiarati con lo stesso nome della classe e possono avere parametri
+		 * o essere senza parametri. Se un costruttore è definito senza parametri, viene chiamato
+		 * "costruttore senza argomenti". Se ha parametri, viene chiamato "costruttore con argomenti".
+		 * Quando si crea un nuovo oggetto, il costruttore viene chiamato implicitamente.
+		 * 
+		 * Se si tenta di creare una nuova istanza di una classe senza specificare argomenti, e non è stato
+		 * dichiarato esplicitamente alcun costruttore, allora Java aggiunge automaticamente un costruttore senza argomenti.
+		 * 
+		 * Se invece si è dichiarato esplicitamente almeno un costruttore (con o senza argomenti),
+		 * il compilatore non aggiungerà automaticamente il costruttore senza argomenti.
+		 * Quindi, se si tenta di creare un'istanza della classe senza specificare argomenti e non si ha
+		 * un costruttore senza argomenti, si verificherà un errore di compilazione.
+		 * 
+		 * E' importante notare che in questi esempi si rende possibile l'accesso e la manipolazione diretta
+		 * degli attributi, che ovviamente si vuole evitare.
+		 * Si approfondisce questo aspetto (variabili private) in altre lezioni.
+		 */
+		
+		Persona persona1 = new Persona("Luca", "Rossi", 25, "Blu");
+		Persona persona2 = new Persona("Marco", "Verdi", 35, "Rosso");
+		
+		System.out.println(persona1.cognome);
+		System.out.println(persona2.cognome);
+		
+		persona1.saluta();
+		
+		Prova personaProva = new Prova();
+		System.out.println(personaProva.nome);
 	}
 	
 }
