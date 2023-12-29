@@ -78,6 +78,9 @@ public class Main {
 		//lezione sul passaggio di oggetti come parametri
 		Oggetti_parametri.main(null);
 
+		//lezione sulle keyword final e static
+		Final_static.main(null);
+		
 	}
 
 }
@@ -1129,6 +1132,45 @@ class Oggetti_parametri{
 		
 		void saluta(Persona persona) {
 			System.out.println("Ciao " + persona.nome + " sono " + this.nome);
+		}
+	}
+	
+}
+
+class Final_static{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLE KEYWORD FINAL E STATIC
+		 * (1) final indica una variabile che non può essere modificata nel corso del programma
+		 * (2) static ci permette di rendere una variabile o un metodo unico per una classe e condiviso
+		 *     da tutte le istanze; un metodo statico può accedere solo a variabili statiche.
+		 */
+		
+		final int prova = 5;
+//		prova = 10;		//genera un errore
+		
+		Persona persona1 = new Persona("Luca", "Rossi");
+		Persona persona2 = new Persona("Marco", "Verdi");
+		
+		System.out.println("Numero persone: " + Persona.numeroPersone);
+		Persona.mostraNumPersone();
+	}
+	
+	static class Persona{
+		String nome;
+		String cognome;
+		static int numeroPersone = 0;
+		
+		Persona(String nome, String cognome){
+			this.nome = nome;
+			this.cognome = cognome;
+			numeroPersone++;
+			System.out.println(numeroPersone);
+	    }
+		
+		static void mostraNumPersone() {
+			System.out.println("Il numero di persone è: " + numeroPersone);
 		}
 	}
 	
