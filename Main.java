@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 
 public class Main {
@@ -100,6 +101,9 @@ public class Main {
 
 		//lezione sul polimorfismo
 		Polimorfismo.main(null);
+
+		//lezione sulla gestione delle exceptions
+		Exception_handling.main(null);
 
 	}
 
@@ -1418,6 +1422,46 @@ class Polimorfismo{
 		for(Persona persona: classe) {
 			persona.saluta();
 		}
+	}
+	
+}
+
+class Exception_handling{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLA GESTIONE DELLE EXCEPTION
+		 * esempi con ArithmeticException e InputMismatchException
+		 * try cath e finally
+		 */
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		try {
+			System.out.println("Inserire primo numero");
+			int x = scanner.nextInt();
+			
+			System.out.println("Inserire secondo numero");
+			int y = scanner.nextInt();
+			
+			int result = x/y;
+			System.out.println(result);
+		}catch(ArithmeticException e) {
+			System.out.println("non puoi dividere per 0");
+		}catch(InputMismatchException e) {
+			System.out.println("non puoi dividere un numero per una stringa");
+		}catch(Exception e) {
+			System.out.println("c'è stato un problema");
+		}finally {				
+			scanner.close();
+		}
+		/*
+		 * Il blocco finally viene eseguito a prescindere, potremmo quindi specificarlo
+		 * per operazioni che vogliamo siano eseguite a prescindere, sia se l'operazione è andata a buon fine
+		 * sia se viene eseguita una catch; in questo caso ad esempio chiudiamo lo scanner aperto precedentemente.
+		 * Come ulteriori esempi, potremmo utilizzarlo per chiudere un file usato nell'operazione o ad esempio
+		 * per chiudere una connessione ad un database.
+		*/
 	}
 	
 }
