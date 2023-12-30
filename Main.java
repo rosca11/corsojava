@@ -1,7 +1,11 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main {
 
@@ -104,6 +108,9 @@ public class Main {
 
 		//lezione sulla gestione delle exceptions
 		Exception_handling.main(null);
+
+		//lezione sui file
+		Usare_file.main(null);
 
 	}
 
@@ -1462,6 +1469,67 @@ class Exception_handling{
 		 * Come ulteriori esempi, potremmo utilizzarlo per chiudere un file usato nell'operazione o ad esempio
 		 * per chiudere una connessione ad un database.
 		*/
+	}
+	
+}
+
+class Usare_file{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SUI FILE
+		 * importare java.io.file per creare oggetti di tipo File
+		 * importare java.io.FileReader per creare oggetti di tipo FileReader
+		 * importare java.io.FileWriter per creare oggetti di tipo FileWriter
+		 * 
+		 * Ovviamente bisogna importare anche tutte le eccezioni che vanno utilizzate:
+		 * importare java.io.FileNotFoundException		PER LETTURA
+		 * importare java.io.IOException 				PER LETTURA E SCRITTURA
+		 * 
+		 * verificare se file esiste nel progetto o nel computer
+		 * getPath, getAbsolutePath, isFile
+		 * eliminare file
+		 * scrivere in un file con filewriter: write e append
+		 * leggere un file con filereader
+		 */
+	
+		File file = new File("prova.txt");		//crea un oggetto di tipo file
+		
+		if(file.exists()) {							
+			System.out.println("Il file esiste");
+			System.out.println(file.getPath());
+			System.out.println(file.getAbsolutePath());
+			System.out.println(file.isFile());
+			file.delete();
+		}else {
+			System.out.println("Il file non esiste");
+		}
+		
+		File cartella = new File("src");
+		System.out.println(cartella.isFile());
+		
+		try {
+			FileWriter writer = new FileWriter("prova.txt");
+			writer.write("Ciao sono marco\nSto seguendo il corso di Java\nmi sto divertendo");
+			writer.append("\nBellissimo file");
+			writer.append("\nTesto aggiuntivo");
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			FileReader reader = new FileReader("prova.txt");
+			int data = reader.read();										//il reader legge un singolo carattere in formato ASCII
+			while(data != -1) {												//se data è -1 allora non è nessun carattere ASCII
+				System.out.print((char)data);								//stampo con print facendo il casting a char di ogni ASCII	
+				data = reader.read();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
