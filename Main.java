@@ -6,6 +6,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
 
@@ -114,6 +118,9 @@ public class Main {
 
 		//lezione sul casting
 		Casting.main(null);
+
+		//lezione su data e ora
+		Data_ora.main(null);
 
 	}
 
@@ -1558,6 +1565,44 @@ class Casting{
 		 * va fatto manualmente poiché si passa da un tipo di dato con range piu ampio a un tipo di dato con range piu ristretto,
 		 * e quindi si ha una perdita di dati.
 		 */
+	}
+	
+}
+
+class Data_ora{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU DATA/ORA
+		 * data, ora, data e ora
+		 * formattare date
+		 * 
+		 * importare java.time.LocalDate 					PER LA DATA
+		 * importare java.time.LocalTime					PER L'ORA
+		 * importare java.time.LocalDateTime 				PER DATA E ORA
+		 * importare java.time.format.DateTimeFormatter 	PER FORMATTARE UNA DATA
+		 */
+		
+		LocalDate data = LocalDate.now();
+		System.out.println(data);
+		
+		LocalTime ora = LocalTime.now();
+		System.out.println(ora);
+		
+		LocalDateTime dataOra = LocalDateTime.now();
+		System.out.println(dataOra);
+		
+		DateTimeFormatter x = DateTimeFormatter.ofPattern("dd-MM-yyyy");	//formatto la data
+		System.out.println(data.format(x));
+		
+		x = DateTimeFormatter.ofPattern("dd MMM yyyy");		//con tre M si ha il nome del mese
+		System.out.println(data.format(x));
+		
+		x = DateTimeFormatter.ofPattern("dd MMMM yyyy");	//con quattro M si ha il nome intero del mese
+		System.out.println(data.format(x));
+		
+		x = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy");	//con la E si fa riferimento al nome del giorno e il funzionamento è analogo alle M 
+		System.out.println(data.format(x));
 	}
 	
 }
