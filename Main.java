@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 
 public class Main {
 
@@ -122,6 +123,9 @@ public class Main {
 		//lezione su data e ora
 		Data_ora.main(null);
 
+		//lezione sulle hashmap
+		Hashmap.main(null);
+		
 	}
 
 }
@@ -1603,6 +1607,43 @@ class Data_ora{
 		
 		x = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy");	//con la E si fa riferimento al nome del giorno e il funzionamento è analogo alle M 
 		System.out.println(data.format(x));
+	}
+	
+}
+
+class Hashmap{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLE HASHMAP
+		 * cosa sono
+		 * crearne una
+		 * aggiungere elementi
+		 * accedere agli elementi
+		 * rimuovere un elemento
+		 * pulire hashmap
+		 * 
+		 * Le hashmap, a differenza delle ArrayList ci permettono di salavre
+		 * gli elementi come coppie <chiave, valore>.
+		 * 
+		 * importare java.util.HashMap
+		 */
+		
+		HashMap<String, String> capitali = new HashMap<String, String>();
+		
+		capitali.put("Italia", "Roma");
+		capitali.put("Inghilterra", "Londra");
+		capitali.put("Germania", "Berlino");
+		capitali.put("Francia", "Parigi");
+		
+		System.out.println(capitali.get("Germania"));	//ottengo il valore associato alla chiave "Germania"
+		System.out.println(capitali);					//ottengo la conformazione dell'intero hashmap
+		
+		capitali.remove("Francia");		//rimuovo l'element con chiave "Francia"
+		System.out.println(capitali);
+		
+		capitali.clear();				//elimino tutti gli elementi dell'hashmap
+		System.out.println(capitali);
 	}
 	
 }
