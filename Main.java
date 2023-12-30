@@ -86,7 +86,9 @@ public class Main {
 
 		//lezione sulle classi astratte
 		Classi_astratte.main(null);
-		
+
+		//lezione su modificatori d'accesso: vedere pacchetto1 e pacchetto2
+
 	}
 
 }
