@@ -112,6 +112,9 @@ public class Main {
 		//lezione sui file
 		Usare_file.main(null);
 
+		//lezione sul casting
+		Casting.main(null);
+
 	}
 
 }
@@ -1530,6 +1533,31 @@ class Usare_file{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+}
+
+class Casting{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SUL CASTING
+		 * Il casting è quel processo che modifica un tipo di dato
+		 * Implicito: automatico quando passiamo ad un tipo piu ampio (int-->double, float-->double)
+		 * Esplicito: manuale quando passiamo ad un tipo piu ristretto
+		 */
+		
+		double x = 9;			//anche se gli assegno un int, Java effettua un casting implicito
+		System.out.println(x);
+		
+		int y = (int) 9.5;		//casting esplicito da double a int
+		System.out.println(y);
+		
+		/*
+		 * Il casting implicito viene fatto automaticamente perché non vi è perdita di dati, mentre il casting esplicito
+		 * va fatto manualmente poiché si passa da un tipo di dato con range piu ampio a un tipo di dato con range piu ristretto,
+		 * e quindi si ha una perdita di dati.
+		 */
 	}
 	
 }
