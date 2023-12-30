@@ -89,6 +89,9 @@ public class Main {
 
 		//lezione su modificatori d'accesso: vedere pacchetto1 e pacchetto2
 
+		//lezione su incapsulamento
+		Incapsulamento.main(null);
+
 	}
 
 }
@@ -1261,6 +1264,32 @@ class Classi_astratte{
 		Macchina macchina = new Macchina();
 		macchina.muovi();
 		macchina.frena();
+	}
+	
+}
+
+class Incapsulamento{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SU INCAPSULAMENTO
+		 * L'incapsulamento è un processo con cui nascondiamo attributi di una classe all'esterno
+		 * dichiarandoli come private; diventano accessibili solo tramite dei metodi (getters/setters)
+		 * 
+		 * creiamo classe persona
+		 * aggiungiamo attributi private
+		 * definiamo getters e setters
+		 */
+		
+		Persona_encapsulated persona = new Persona_encapsulated("Luca", "Rossi");
+		
+//		System.out.println(persona.nome);	//non posso accedere direttamente a nome
+		System.out.println("Nome: " + persona.getNome());
+		
+		System.out.println("Sto modificando il nome...");
+		persona.setNome("Marco");
+		
+		System.out.println("Nome: " + persona.getNome());
 	}
 	
 }
