@@ -11,6 +11,7 @@ import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Main {
 
@@ -125,7 +126,10 @@ public class Main {
 
 		//lezione sulle hashmap
 		Hashmap.main(null);
-		
+
+		//lezione sugli iteratori
+		Iteratori.main(null);
+
 	}
 
 }
@@ -1644,6 +1648,48 @@ class Hashmap{
 		
 		capitali.clear();				//elimino tutti gli elementi dell'hashmap
 		System.out.println(capitali);
+	}
+	
+}
+
+class Iteratori{
+	
+	public static void main(String[] args) {
+		/*
+		 * Un iteratore è un oggetto che cicla una collezione (ArrayList)
+		 * 
+		 * loop di un ArrayList
+		 * rimuovere un elemento
+		 * 
+		 * importare java.util.Iterator
+		 */
+		
+		ArrayList<String> persone = new ArrayList<String>();
+		
+		persone.add("Luca");
+		persone.add("Marco");
+		persone.add("Anna");
+		persone.add("Paolo");
+		
+		Iterator<String> it = persone.iterator();
+		
+		System.out.println(it.next());
+		
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		
+		it = persone.iterator();	//rimetto it all'inizio dell'ArrayList
+		
+		while(it.hasNext()) {
+			String persona = it.next();
+			if(persona == "Anna") {
+				System.out.println("Ho rimosso " + persona);
+				it.remove();
+			}
+		}
+		
+		System.out.println(persone);
 	}
 	
 }
