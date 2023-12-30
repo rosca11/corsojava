@@ -22,4 +22,14 @@ public class Persona_encapsulated{
 		this.cognome = cognome;
 	}
 	
+	//utilizzati nella lezione sulla copia di oggetti
+	public void copy(Persona_encapsulated persona) {		//TRAMITE METODO
+		this.setNome(persona.getNome());
+		this.setCognome(persona.getCognome());
+	}
+	Persona_encapsulated(Persona_encapsulated persona) {	//TRAMITE COSTRUTTORE
+		this.setNome(persona.getNome());
+		this.setCognome(persona.getCognome());
+	}
+	
 }

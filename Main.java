@@ -92,6 +92,9 @@ public class Main {
 		//lezione su incapsulamento
 		Incapsulamento.main(null);
 
+		//lezione sulla copia di oggetti
+		Copiare_oggetti.main(null);
+
 	}
 
 }
@@ -1290,6 +1293,63 @@ class Incapsulamento{
 		persona.setNome("Marco");
 		
 		System.out.println("Nome: " + persona.getNome());
+	}
+	
+}
+
+class Copiare_oggetti{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SUL COPIARE OGGETTI
+		 * tramite metodo
+		 * tramite costruttore
+		 * 
+		 * (Modificata classe Persona_encapsulated)
+		 */
+		
+		Persona_encapsulated persona1 = new Persona_encapsulated("Luca", "Rossi");
+		Persona_encapsulated persona2 = new Persona_encapsulated("Marco", "Verdi");
+		
+		/*
+		 * Se faccio un assegnamento del tipo persona2 = persona1, non sto realmente copiando l'oggetto,
+		 * ma sto facendo in modo che la reference persona2 punti allo stesso oggetto puntato dalla reference persona1:
+		 * quindi le reference persona1 e persona2 punteranno alla stessa locazione di memoria.
+		 */
+		persona2 = persona1;			//persona1 e persona2 puntano allo stesso oggetto
+		
+		persona1.setNome("Edoardo");
+		
+		System.out.println(persona1);
+		System.out.println(persona2);
+		System.out.println();
+		System.out.println(persona1.getNome());
+		System.out.println(persona1.getCognome());
+		System.out.println();
+		System.out.println(persona2.getNome());
+		System.out.println(persona2.getCognome());
+		System.out.println();
+		
+		Persona_encapsulated persona3 = new Persona_encapsulated("Luca", "Rossi");
+		Persona_encapsulated persona4 = new Persona_encapsulated("Marco", "Verdi");
+	
+		persona4.copy(persona3);				//sto utilizzando un metodo aggiunto nella classe Persona_encapsulated
+		persona3.setNome("Edoardo");
+		
+		System.out.println(persona3);
+		System.out.println(persona4);
+		System.out.println();
+		System.out.println(persona3.getNome());
+		System.out.println(persona3.getCognome());
+		System.out.println();
+		System.out.println(persona4.getNome());
+		System.out.println(persona4.getCognome());
+		
+		Persona_encapsulated persona5 = new Persona_encapsulated(persona3);		//sto utilizzando un costruttore aggiunto nella classe Persona_encapsulated
+		System.out.println();
+		System.out.println("Persona 5:");
+		System.out.println(persona5.getNome());
+		System.out.println(persona5.getCognome());
 	}
 	
 }
