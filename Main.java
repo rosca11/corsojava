@@ -98,6 +98,9 @@ public class Main {
 		//lezione sulle interfacce
 		Interfacce.main(null);
 
+		//lezione sul polimorfismo
+		Polimorfismo.main(null);
+
 	}
 
 }
@@ -1382,6 +1385,39 @@ class Interfacce{
 		
 		Pesce pesce = new Pesce();
 		pesce.scappa();
+	}
+	
+}
+
+class Polimorfismo{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SUL POLIMORFISMO
+		 * Il polimorfismo è la capacità di un oggetto di identificarsi con piu tipi di dato.
+		 * Essenzialmente un oggetto si collega quindi a piu tipi di dato.
+		 */
+		
+		Studente studente1 = new Studente("Luca", "Rossi", 0, null, null);
+		Studente studente2 = new Studente("Anna", "Neri", 0, null, null);
+		Insegnante insegnante1 = new Insegnante("Marco", "Verdi", 0, null);
+		
+		/*
+		 * Essendo le classi Studente e Insegnante derivate dalla classe Persona,
+		 * il polimorfismo ci permette, ad esempio, di creare un array di tipo Persona che contiene
+		 * oggetti di tipo Studente e di tipo Insegnante.
+		 * 
+		 * Ovviamente, dato che stiamo lavorando con il polimorfismo, possiamo utilizzare metodi solo se
+		 * sono definiti nella classe Persona. Quindi nell'esempio:
+		 * - utilizziamo il metodo saluta() definito in Persona e poi sovrascritto nelle classi Studente e Insegnante;
+		 * - in sostanza, gli elementi dell'array cambiano forma a seconda del fatto che siano studenti o insegnanti
+		 */
+		
+		Persona[] classe = {studente1, studente2, insegnante1};
+		
+		for(Persona persona: classe) {
+			persona.saluta();
+		}
 	}
 	
 }
