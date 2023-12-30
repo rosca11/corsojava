@@ -95,6 +95,9 @@ public class Main {
 		//lezione sulla copia di oggetti
 		Copiare_oggetti.main(null);
 
+		//lezione sulle interfacce
+		Interfacce.main(null);
+
 	}
 
 }
@@ -1350,6 +1353,35 @@ class Copiare_oggetti{
 		System.out.println("Persona 5:");
 		System.out.println(persona5.getNome());
 		System.out.println(persona5.getCognome());
+	}
+	
+}
+
+class Interfacce{
+	
+	public static void main(String[] args) {
+		/*
+		 * LEZIONE SULLE INTERFACCE
+		 * Le interfacce sono simili alle classi astratte, con la differenza che
+		 * mentre una classe puo estendere solo un'altra classe, al contrario può
+		 * implementare piu interfacce.
+		 * 
+		 * Mentre la classe astratta viene ereditata, e quindi dobbiamo implementare i metodi ereditati
+		 * dalla classe astratta, le interfacce aggiungono funzionalità extra a una classe senza la relazione di "eredità".
+		 * Potremmo ad esempio voler aggiungere delle funzionalità a un insieme di classi che non hanno alcuna correlazione tra loro.
+		 * 
+		 * create classi Leone, Gazzella, Pesce
+		 * create interfacce Preda, Predatore
+		 */
+		
+		Leone leone = new Leone();
+		Gazzella gazzella = new Gazzella();
+		
+		leone.caccia();
+		gazzella.scappa();
+		
+		Pesce pesce = new Pesce();
+		pesce.scappa();
 	}
 	
 }
