@@ -14,7 +14,7 @@ public class Main{
 		 * 
 		 * 				class   package   subclass   world
 		 * public		si		si		  si		 si		
-		 * protected	si		si		  si		 no
+		 * protected		si		si		  si		 no
 		 * default		si		si		  no		 no
 		 * private		si		no		  no		 no
 		 * 
@@ -26,7 +26,7 @@ public class Main{
 		 */
 		
 		B prova = new B();
-//		B.nome_default = "nome";	//non posso accedere a nome_default
+//		prova.nome_default = "nome";	//non posso accedere a nome_default
 	
 		prova.nome_public = "nome";	//posso accedere a nome_public
 		
