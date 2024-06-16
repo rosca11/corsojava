@@ -12,7 +12,7 @@ public class Main{
 		 * I modificatori di accesso servono per aggiungere un livello di sicurezza aggiuntivo
 		 * nell'applicazione.
 		 * 
-		 * 				class   package   subclass   world
+		 * 			class   	package   	subclass  	 world
 		 * public		si		si		  si		 si		
 		 * protected		si		si		  si		 no
 		 * default		si		si		  no		 no
